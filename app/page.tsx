@@ -21,11 +21,11 @@ import {
 const tabs = [
   { id: "resumen", label: "Resumen Ejecutivo" },
   { id: "vial", label: "Sector Vial" },
-  { id: "aereo", label: "Sector Aereo" },
-  { id: "ferreo", label: "Sector Ferreo" },
+  { id: "aereo", label: "Sector Aéreo" },
+  { id: "ferreo", label: "Sector Férreo" },
   { id: "ciudades", label: "Grandes Ciudades" },
   { id: "masivo", label: "Transporte Masivo" },
-  { id: "estrategico", label: "Vision Estrategica" },
+  { id: "estrategico", label: "Visión Estratégica" },
   { id: "riesgos", label: "Riesgos y Brechas" },
 ];
 
@@ -110,7 +110,7 @@ function ResumenSection() {
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
           <h3 className="text-lg font-semibold text-white mb-2">PMTI 2021-2051: $240 Billones COP</h3>
-          <p className="text-xs text-muted mb-4">Distribucion por modo de transporte (sobre base $140B fase 1)</p>
+          <p className="text-xs text-muted mb-4">Distribución por modo de transporte (sobre base $140B fase 1)</p>
           <PMTIChart />
           <div className="grid grid-cols-2 gap-2 mt-4">
             {pmtiDistribution.map((m, i) => (
@@ -133,19 +133,19 @@ function ResumenSection() {
 
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
-          <h3 className="text-lg font-semibold text-white mb-2">Presupuesto Transporte: Evolucion</h3>
+          <h3 className="text-lg font-semibold text-white mb-2">Presupuesto Transporte: Evolución</h3>
           <p className="text-xs text-muted mb-3">Billones COP - Presupuesto General de la Nacion</p>
           <PresupuestoTimelineChart />
         </Card>
         <Card>
-          <h3 className="text-lg font-semibold text-white mb-2">Radar Sectorial: Inversion vs Ejecucion vs Cobertura</h3>
-          <p className="text-xs text-muted mb-3">Indice relativo por modo de transporte (0-100)</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Radar Sectorial: Inversión vs Ejecución vs Cobertura</h3>
+          <p className="text-xs text-muted mb-3">Índice relativo por modo de transporte (0-100)</p>
           <RadarModoChart />
         </Card>
       </div>
 
       <Card>
-        <h3 className="text-lg font-semibold text-white mb-2">Inversion Historica en Infraestructura</h3>
+        <h3 className="text-lg font-semibold text-white mb-2">Inversión Histórica en Infraestructura</h3>
         <p className="text-xs text-muted mb-3">CAPEX acumulado por cuatrienio vs. PMTI total (COP Billones)</p>
         <InversionHistoricaChart />
       </Card>
@@ -168,7 +168,7 @@ function ResumenSection() {
       <SectionTitle sub="Datos de contexto verificados con fuentes oficiales">Indicadores del Sector</SectionTitle>
       <div className="grid md:grid-cols-3 gap-4">
         <Card className="border-amber-500/30">
-          <p className="text-xs text-muted uppercase">Costos Logisticos</p>
+          <p className="text-xs text-muted uppercase">Costos Logísticos</p>
           <p className="text-2xl font-bold text-amber-400">{datosContextuales.costosLogisticos.valor}%</p>
           <p className="text-xs text-gray-400">{datosContextuales.costosLogisticos.unidad}</p>
           <p className="text-xs text-red-400 mt-1">{datosContextuales.costosLogisticos.referencia}</p>
@@ -186,35 +186,35 @@ function ResumenSection() {
           <p className="text-2xl font-bold text-red-400">2,529</p>
           <p className="text-xs text-gray-400">muertos ene-abr 2025</p>
           <p className="text-xs text-emerald-400 mt-1">-5.14% vs 2024 (137 vidas salvadas)</p>
-          <p className="text-xs text-gray-500 mt-1">Motociclistas: 62% de victimas</p>
+          <p className="text-xs text-gray-500 mt-1">Motociclistas: 62% de víctimas</p>
         </Card>
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         <Card>
-          <p className="text-xs text-muted uppercase">Pasajeros Aereos Colombia</p>
+          <p className="text-xs text-muted uppercase">Pasajeros Aéreos Colombia</p>
           <p className="text-2xl font-bold text-blue-400">57.52M</p>
           <p className="text-xs text-gray-400">pasajeros 2025 (record historico)</p>
           <p className="text-xs text-gray-300 mt-1">32.9M nacionales + 24.7M internacionales. 2026: 10M+ en primeros meses</p>
           <p className="text-xs text-emerald-400 mt-1">+1.67% vs 2024. Skytrax x8 mejor Sudamerica</p>
         </Card>
         <Card>
-          <p className="text-xs text-muted uppercase">Flota Electrica Bogota</p>
+          <p className="text-xs text-muted uppercase">Flota Eléctrica Bogotá</p>
           <p className="text-2xl font-bold text-emerald-400">1,850</p>
           <p className="text-xs text-gray-400">buses EV meta 2026</p>
           <p className="text-xs text-gray-300 mt-1">711 nuevos EV llegan en 2026. Fase VI: 269 troncales</p>
-          <p className="text-xs text-blue-400 mt-1">3ra flota EV mas grande del mundo</p>
+          <p className="text-xs text-blue-400 mt-1">3ra flota EV más grande del mundo</p>
         </Card>
         <Card className="border-red-500/30">
           <p className="text-xs text-muted uppercase">Crisis Transcaribe</p>
           <p className="text-2xl font-bold text-red-400">$76,000M</p>
-          <p className="text-xs text-gray-400">deficit proyectado 2026</p>
-          <p className="text-xs text-gray-300 mt-1">Tarifa tecnica $6,950 vs usuario $3,500</p>
+          <p className="text-xs text-gray-400">déficit proyectado 2026</p>
+          <p className="text-xs text-gray-300 mt-1">Tarifa técnica $6,950 vs usuario $3,500</p>
           <p className="text-xs text-amber-400 mt-1">55 buses nuevos mayo 2026</p>
         </Card>
       </div>
       <div className="grid md:grid-cols-4 gap-4">
         <Card>
-          <p className="text-xs text-muted uppercase">Empleo Construccion</p>
+          <p className="text-xs text-muted uppercase">Empleo Construcción</p>
           <p className="text-xl font-bold text-white">1.58M</p>
           <p className="text-xs text-gray-400">empleados (ene 2026, 6.8% pob. ocupada)</p>
           <p className="text-xs text-emerald-400 mt-1">$1B invertido = 28,000 empleos</p>
@@ -232,7 +232,7 @@ function ResumenSection() {
           <p className="text-xs text-amber-400 mt-1">Meta: 33,000 km en cuatrienio</p>
         </Card>
         <Card className="border-red-500/30">
-          <p className="text-xs text-muted uppercase">Ejecucion Presupuestal</p>
+          <p className="text-xs text-muted uppercase">Ejecución Presupuestal</p>
           <p className="text-xl font-bold text-red-400">7%</p>
           <p className="text-xs text-gray-400">ejecutado a abr 2025 (CCI)</p>
           <p className="text-xs text-gray-300 mt-1">Invias adeuda $1B+ a constructoras</p>
@@ -247,7 +247,7 @@ function VialSection() {
     <div className="space-y-8">
       {/* Mapa de corredores */}
       <Card>
-        <h3 className="text-sm font-semibold text-white mb-3 text-center">Mapa Esquematico de Corredores Viales</h3>
+        <h3 className="text-sm font-semibold text-white mb-3 text-center">Mapa Esquemático de Corredores Viales</h3>
         <CorridorMap />
       </Card>
 
@@ -295,8 +295,8 @@ function VialSection() {
         ))}
       </div>
 
-      <SectionTitle sub="Red: 10,192 km | Pavimentada: 79.8% | Deficit mantenimiento: $19B/ano">
-        INVIAS - Contratacion Historica 2026
+      <SectionTitle sub="Red: 10,192 km | Pavimentada: 79.8% | Déficit mantenimiento: $19B/ano">
+        INVIAS - Contratación Histórica 2026
       </SectionTitle>
       <Card>
         <div className="grid md:grid-cols-3 gap-6">
@@ -331,8 +331,8 @@ function VialSection() {
         </div>
       </Card>
 
-      <SectionTitle sub="Sitios criticos identificados por expertos del sector - Documento Estrategico 2026-2030">
-        Cuellos de Botella Criticos
+      <SectionTitle sub="Sitios críticos identificados por expertos del sector - Documento Estrategico 2026-2030">
+        Cuellos de Botella Críticos
       </SectionTitle>
       <div className="grid md:grid-cols-2 gap-4">
         {cuellosDeBottella.map((c, i) => (
@@ -429,7 +429,7 @@ function AereoSection() {
         </div>
       </Card>
       <Card className="border-amber-500/30">
-        <h3 className="text-sm font-semibold text-amber-400 mb-2">Alerta: Ejecucion Rezagada</h3>
+        <h3 className="text-sm font-semibold text-amber-400 mb-2">Alerta: Ejecución Rezagada</h3>
         <p className="text-xs text-gray-400">Avance fisico promedio del Plan 2025: <span className="text-white font-bold">37%</span> vs. meta 52%. Mas de la mitad de los 56 proyectos no alcanza 40%.</p>
         <div className="mt-3">
           <ProgressBar value={37} color="bg-amber-500" />
@@ -443,7 +443,7 @@ function AereoSection() {
 function FerreoSection() {
   return (
     <div className="space-y-8">
-      <SectionTitle sub="6 corredores prioritarios | $94B planificados | Primera APP ferrea 2025">Sector Ferreo</SectionTitle>
+      <SectionTitle sub="6 corredores prioritarios | $94B planificados | Primera APP ferrea 2025">Sector Férreo</SectionTitle>
       <Card className="border-emerald-500/30">
         <h3 className="text-lg font-semibold text-emerald-400 mb-2">Hito: La Dorada-Chiriguana</h3>
         <p className="text-sm text-gray-300 mb-3">Primera APP ferrea de Colombia - COP $3.4 Billones</p>
@@ -483,7 +483,7 @@ function FerreoSection() {
         </table>
       </div>
       <Card>
-        <h3 className="text-sm font-semibold text-white mb-3">Trenes de Cercanias</h3>
+        <h3 className="text-sm font-semibold text-white mb-3">Trenes de Cercanías</h3>
         <div className="grid md:grid-cols-3 gap-4">
           {[
             { ciudad: "Bogota", proyecto: "Regiotram de Occidente", estado: "32% avance, Op. Oct 2027" },
@@ -507,7 +507,7 @@ function CiudadesSection() {
   const ciudad = ciudades[selected];
   return (
     <div className="space-y-6">
-      <SectionTitle sub="Bogota, Medellin, Cali, Barranquilla, Cartagena">Grandes Ciudades</SectionTitle>
+      <SectionTitle sub="Bogotá, Medellín, Cali, Barranquilla, Cartagena">Grandes Ciudades</SectionTitle>
       <Card>
         <h3 className="text-sm font-semibold text-white mb-3">Presupuesto Distrital 2026 (COP Billones)</h3>
         <CiudadesPresupuestoChart />
@@ -551,11 +551,11 @@ function MasivoSection() {
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
           <h3 className="text-sm font-semibold text-white mb-3">Avance Grandes Proyectos Metro/Tren</h3>
-          <p className="text-xs text-muted mb-2">Evolucion porcentual de avance</p>
+          <p className="text-xs text-muted mb-2">Evolución porcentual de avance</p>
           <MetroProgressChart />
         </Card>
         <Card>
-          <h3 className="text-sm font-semibold text-white mb-3">Electrificacion de Flotas BRT</h3>
+          <h3 className="text-sm font-semibold text-white mb-3">Electrificación de Flotas BRT</h3>
           <p className="text-xs text-muted mb-2">% de flota electrica proyectada por ciudad</p>
           <ElectrificacionChart />
         </Card>
@@ -589,13 +589,13 @@ function MasivoSection() {
         <Card>
           <h3 className="text-sm font-semibold text-white mb-4">Timeline: Metro de Bogota L1</h3>
           <Timeline events={[
-            { date: "Oct 2019", title: "Adjudicacion contrato", detail: "Consorcio APCA Transmimetro (China Harbour + Xi'an Metro)", status: "done" },
+            { date: "Oct 2019", title: "Adjudicación contrato", detail: "Consorcio APCA Transmimetro (China Harbour + Xi'an Metro)", status: "done" },
             { date: "2021-2023", title: "Obras iniciales y cimentacion", detail: "Patio taller, pilotes, columnas del viaducto", status: "done" },
             { date: "2024", title: "Avance acelerado viaducto", detail: "De 35% a 60%. Primeras dovelas instaladas", status: "done" },
             { date: "Mar 2026", title: "75.50% - 12 km de viaducto", detail: "9 trenes entregados. 130+ cabinas del TransMiCable", status: "active" },
             { date: "Jun 2026", title: "Pruebas de rodadura", detail: "Primeros 5.76 km. Test del material rodante", status: "pending" },
             { date: "Dic 2026", title: "Meta 90% avance", detail: "Finalizacion estructural del viaducto completo", status: "pending" },
-            { date: "Mar 2028", title: "Operacion comercial", detail: "16 estaciones, 23.96 km elevados", status: "pending" },
+            { date: "Mar 2028", title: "Operación comercial", detail: "16 estaciones, 23.96 km elevados", status: "pending" },
           ]} />
         </Card>
         <Card>
@@ -616,7 +616,7 @@ function MasivoSection() {
           <h3 className="text-sm font-semibold text-white mb-3">BRTs en Crisis</h3>
           <div className="space-y-3">
             {[
-              { nombre: "Transcaribe (Cartagena)", issue: "Deficit fiscal $63,000M. Tarifa $3,900 (+14.7%)" },
+              { nombre: "Transcaribe (Cartagena)", issue: "Déficit fiscal $63,000M. Tarifa $3,900 (+14.7%)" },
               { nombre: "MIO (Cali)", issue: "Operadores patrimonio negativo. Renovacion $1.37B" },
               { nombre: "Metrolinea (Bucaramanga)", issue: "Estaciones vandalizadas, baja demanda" },
             ].map((brt, i) => (
@@ -631,7 +631,7 @@ function MasivoSection() {
           <h3 className="text-sm font-semibold text-white mb-3">BRTs Destacados</h3>
           <div className="space-y-3">
             {[
-              { nombre: "Megabus (Pereira)", issue: "Unico sin deficit. 100% EV Dosquebradas. $3,600" },
+              { nombre: "Megabus (Pereira)", issue: "Unico sin déficit. 100% EV Dosquebradas. $3,600" },
               { nombre: "TransMilenio (Bogota)", issue: "+34.5 km. Fase VI: 269 buses EV. 101 EV H1 2026" },
               { nombre: "Transmetro (B/quilla)", issue: "60 nuevos buses. R40/S40 reactivadas. Expansion" },
             ].map((brt, i) => (
@@ -666,7 +666,7 @@ function MasivoSection() {
 function EstrategicoSection() {
   return (
     <div className="space-y-8">
-      <SectionTitle sub="Documento estrategico 2026-2030 + analisis datos publicos">Vision Estrategica</SectionTitle>
+      <SectionTitle sub="Documento estratégico 2026-2030 + analisis datos publicos">Visión Estratégica</SectionTitle>
       <Card className="border-blue-500/30">
         <h3 className="text-lg font-semibold text-blue-400 mb-3">Reforma Institucional Propuesta</h3>
         <p className="text-xs text-gray-400 mb-4">Revisar entidades del MinTransporte, fusionar, y concentrar planeacion en la UPIT.</p>
@@ -697,7 +697,7 @@ function EstrategicoSection() {
           </Card>
         ))}
       </div>
-      <SectionTitle sub="Proyectos con actualizacion relevante verificada">Proyectos Criticos Adicionales</SectionTitle>
+      <SectionTitle sub="Proyectos con actualización relevante verificada">Proyectos Críticos Adicionales</SectionTitle>
       <div className="grid md:grid-cols-2 gap-4">
         <Card className="border-red-500/30">
           <h4 className="text-sm font-semibold text-red-400">Mulalo-Loboguerrero</h4>
@@ -724,7 +724,7 @@ function EstrategicoSection() {
       </div>
 
       <Card className="border-red-500/30">
-        <h3 className="text-sm font-semibold text-red-400 mb-2">Dato Critico: Cordillera Oriental</h3>
+        <h3 className="text-sm font-semibold text-red-400 mb-2">Dato Crítico: Cordillera Oriental</h3>
         <p className="text-xs text-gray-400">Solo dos cordilleras en el mundo presentan levantamiento permanente: el <strong className="text-white">Himalaya</strong> y la <strong className="text-white">Cordillera Oriental de Colombia</strong>. Esto causa deslizamientos permanentes en las 3 carreteras principales al altiplano/Orinoquia y en las vias al valle del Rio Magdalena.</p>
       </Card>
     </div>
@@ -752,10 +752,10 @@ function RiesgosSection() {
         <div className="space-y-3">
           {[
             { indicador: "Metro Bogota L1", meta: "90% avance", fecha: "Dic 2026", actual: "75.5%" },
-            { indicador: "Metro Bogota L1 Operacion", meta: "Comercial", fecha: "Mar 2028", actual: "En obra" },
-            { indicador: "Tunel del Toyo", meta: "Operacion", fecha: "Dic 2026", actual: "T1:99% T2:70%" },
+            { indicador: "Metro Bogota L1 Operación", meta: "Comercial", fecha: "Mar 2028", actual: "En obra" },
+            { indicador: "Tunel del Toyo", meta: "Operación", fecha: "Dic 2026", actual: "T1:99% T2:70%" },
             { indicador: "Metro Ligero 80", meta: "Apertura", fecha: "2028", actual: "50%+" },
-            { indicador: "Regiotram Fase 1", meta: "Operacion", fecha: "Oct 2027", actual: "37%" },
+            { indicador: "Regiotram Fase 1", meta: "Operación", fecha: "Oct 2027", actual: "37%" },
             { indicador: "Aeropuerto Cartagena", meta: "Viabilidad", fecha: "H1 2026", actual: "Factibilidad" },
             { indicador: "EDMAX El Dorado", meta: "Inicio obra", fecha: "Dic 2028", actual: "Audiencia" },
             { indicador: "4G completo", meta: "100% operacion", fecha: "2026-2027", actual: "92.38%" },
@@ -793,7 +793,7 @@ function RiesgosSection() {
             "Escala sin precedentes: 4G (92%), 5G, PMTI ($240B), Vias para la Paz ($15B)",
             "Diversificacion modal: primera APP ferrea, modo fluvial, cables aereos",
             "Metro Bogota 75.5%, Metro 80 42%, Tren Cercanias Cali en estructuracion",
-            "Electrificacion: Cali (100% EV 2035), Bogota (269+ buses EV), Pereira",
+            "Electrificación: Cali (100% EV 2035), Bogota (269+ buses EV), Pereira",
             "Inclusion regional: 14 departamentos historicamente desatendidos priorizados",
             "Financiamiento multilateral: BID, CAF, Banco Mundial (USD $10-13B activos)",
           ].map((f, i) => (
@@ -834,13 +834,13 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 py-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
-              <p className="text-xs text-blue-400 uppercase tracking-widest mb-2">Analisis Exhaustivo</p>
+              <p className="text-xs text-blue-400 uppercase tracking-widest mb-2">Análisis Exhaustivo</p>
               <h1 className="text-3xl md:text-4xl font-bold text-white">
                 Infraestructura de Transporte
                 <span className="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent"> Colombia</span>
               </h1>
               <p className="text-muted mt-2 text-sm max-w-2xl">
-                Dashboard con datos de ANI, Invias, Aerocivil, DNP, MinTransporte, alcaldias y fuentes gremiales. Integra documento estrategico 2026-2030 con recomendaciones de expertos.
+                Dashboard con datos de ANI, Invias, Aerocivil, DNP, MinTransporte, alcaldias y fuentes gremiales. Integra documento estratégico 2026-2030 con recomendaciones de expertos.
               </p>
             </div>
             <div className="text-right">
@@ -870,7 +870,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted">
             <div>
               <p>Fuentes: ANI, Invias, Aerocivil, MinTransporte, DNP, Metro de Bogota, Metro de Medellin, CCI, BID, CAF, Banco Mundial</p>
-              <p className="mt-1">Documento estrategico: &quot;Infraestructura - Transporte Colombia 2026-2030&quot; | Portafolio, La Republica, El Tiempo, El Colombiano, Infobae, Valora Analitik</p>
+              <p className="mt-1">Documento estratégico: &quot;Infraestructura - Transporte Colombia 2026-2030&quot; | Portafolio, La Republica, El Tiempo, El Colombiano, Infobae, Valora Analitik</p>
             </div>
             <p className="text-gray-500">Datos sujetos a actualizacion</p>
           </div>
