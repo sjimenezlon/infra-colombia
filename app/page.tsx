@@ -6,7 +6,7 @@ import {
   ciudades, cuellosDeBottella, tramosEstructurar, transversalesFaltantes,
   proyectosLargoPlazo, sectorFerreo, reformaInstitucional,
   programasEspeciales, riesgos, viasParaLaPaz, pmtiDistribution,
-  datosContextuales,
+  datosContextuales, proyectosAdicionales,
 } from "./data";
 import {
   PMTIChart, ConcesionesChart, Avance4GChart, PresupuestoTimelineChart,
@@ -191,11 +191,11 @@ function ResumenSection() {
       </div>
       <div className="grid md:grid-cols-3 gap-4">
         <Card>
-          <p className="text-xs text-muted uppercase">Pasajeros Aereos El Dorado</p>
-          <p className="text-2xl font-bold text-blue-400">45.48M</p>
-          <p className="text-xs text-gray-400">pasajeros 2025 (record)</p>
-          <p className="text-xs text-gray-300 mt-1">Ene 2026: 2M+ pax, 16K vuelos, 86% ocupacion</p>
-          <p className="text-xs text-emerald-400 mt-1">Mejor aeropuerto Sudamerica (Skytrax x8)</p>
+          <p className="text-xs text-muted uppercase">Pasajeros Aereos Colombia</p>
+          <p className="text-2xl font-bold text-blue-400">57.52M</p>
+          <p className="text-xs text-gray-400">pasajeros 2025 (record historico)</p>
+          <p className="text-xs text-gray-300 mt-1">32.9M nacionales + 24.7M internacionales. 2026: 10M+ en primeros meses</p>
+          <p className="text-xs text-emerald-400 mt-1">+1.67% vs 2024. Skytrax x8 mejor Sudamerica</p>
         </Card>
         <Card>
           <p className="text-xs text-muted uppercase">Flota Electrica Bogota</p>
@@ -210,6 +210,32 @@ function ResumenSection() {
           <p className="text-xs text-gray-400">deficit proyectado 2026</p>
           <p className="text-xs text-gray-300 mt-1">Tarifa tecnica $6,950 vs usuario $3,500</p>
           <p className="text-xs text-amber-400 mt-1">55 buses nuevos mayo 2026</p>
+        </Card>
+      </div>
+      <div className="grid md:grid-cols-4 gap-4">
+        <Card>
+          <p className="text-xs text-muted uppercase">Empleo Construccion</p>
+          <p className="text-xl font-bold text-white">1.58M</p>
+          <p className="text-xs text-gray-400">empleados (ene 2026, 6.8% pob. ocupada)</p>
+          <p className="text-xs text-emerald-400 mt-1">$1B invertido = 28,000 empleos</p>
+        </Card>
+        <Card className="border-red-500/30">
+          <p className="text-xs text-muted uppercase">Competitividad (IMD)</p>
+          <p className="text-xl font-bold text-red-400">Puesto 58/64</p>
+          <p className="text-xs text-gray-400">Infra: posicion 56</p>
+          <p className="text-xs text-gray-500 mt-1">Chile: 44, Mexico: 55</p>
+        </Card>
+        <Card className="border-red-500/30">
+          <p className="text-xs text-muted uppercase">Red Terciaria</p>
+          <p className="text-xl font-bold text-red-400">142,284 km</p>
+          <p className="text-xs text-gray-400">94-96% en mal estado. Solo 6% pavimentado</p>
+          <p className="text-xs text-amber-400 mt-1">Meta: 33,000 km en cuatrienio</p>
+        </Card>
+        <Card className="border-red-500/30">
+          <p className="text-xs text-muted uppercase">Ejecucion Presupuestal</p>
+          <p className="text-xl font-bold text-red-400">7%</p>
+          <p className="text-xs text-gray-400">ejecutado a abr 2025 (CCI)</p>
+          <p className="text-xs text-gray-300 mt-1">Invias adeuda $1B+ a constructoras</p>
         </Card>
       </div>
     </div>
@@ -671,6 +697,32 @@ function EstrategicoSection() {
           </Card>
         ))}
       </div>
+      <SectionTitle sub="Proyectos con actualizacion relevante verificada">Proyectos Criticos Adicionales</SectionTitle>
+      <div className="grid md:grid-cols-2 gap-4">
+        <Card className="border-red-500/30">
+          <h4 className="text-sm font-semibold text-red-400">Mulalo-Loboguerrero</h4>
+          <Badge text={proyectosAdicionales.mulaloLoboguerrero.estado} variant="red" />
+          <p className="text-xs text-gray-400 mt-2">{proyectosAdicionales.mulaloLoboguerrero.detalle}</p>
+          <p className="text-xs text-white mt-1">Patrimonio: {proyectosAdicionales.mulaloLoboguerrero.inversion}</p>
+        </Card>
+        <Card className="border-blue-500/30">
+          <h4 className="text-sm font-semibold text-blue-400">Segundo Tunel de La Linea</h4>
+          <Badge text={proyectosAdicionales.segundoTunelLinea.estado} variant="blue" />
+          <p className="text-xs text-gray-400 mt-2">{proyectosAdicionales.segundoTunelLinea.detalle}</p>
+          <p className="text-xs text-white mt-1">{proyectosAdicionales.segundoTunelLinea.longitud}</p>
+        </Card>
+        <Card className="border-emerald-500/30">
+          <h4 className="text-sm font-semibold text-emerald-400">Variante San Francisco-Mocoa</h4>
+          <Badge text={`${proyectosAdicionales.varianteSanFranciscoMocoa.avance} avance`} variant="green" />
+          <p className="text-xs text-gray-400 mt-2">{proyectosAdicionales.varianteSanFranciscoMocoa.detalle}</p>
+        </Card>
+        <Card className="border-amber-500/30">
+          <h4 className="text-sm font-semibold text-amber-400">Puente Pumarejo (antiguo)</h4>
+          <Badge text={proyectosAdicionales.puentePumarejo.estado} variant="amber" />
+          <p className="text-xs text-gray-400 mt-2">{proyectosAdicionales.puentePumarejo.detalle}</p>
+        </Card>
+      </div>
+
       <Card className="border-red-500/30">
         <h3 className="text-sm font-semibold text-red-400 mb-2">Dato Critico: Cordillera Oriental</h3>
         <p className="text-xs text-gray-400">Solo dos cordilleras en el mundo presentan levantamiento permanente: el <strong className="text-white">Himalaya</strong> y la <strong className="text-white">Cordillera Oriental de Colombia</strong>. Esto causa deslizamientos permanentes en las 3 carreteras principales al altiplano/Orinoquia y en las vias al valle del Rio Magdalena.</p>

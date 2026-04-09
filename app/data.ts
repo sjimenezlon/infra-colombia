@@ -210,9 +210,21 @@ export const datosContextuales = {
   costosLogisticos: { valor: 15.6, unidad: "% de facturacion", referencia: "OCDE: 8%, Mundial: 11-13%", fuente: "Encuesta Nacional Logistica 2024" },
   cargaPortuaria: { valor: "170.8M ton/ano (est. 2025)", detalle: "H1 2025: 85.4M ton (-6.1% vs 2024). Caribe: 84.7%, Pacifico: 13.7%", lider: "Cartagena: 25.1M ton" },
   siniestrosViales: { valor: "2,529 muertos (ene-abr 2025)", detalle: "-5.14% vs 2024. 137 vidas salvadas. Motociclistas: 62% de victimas" },
-  pasajerosAereos: { valor: "45.48M (El Dorado 2025)", detalle: "Ene 2026: 2M+ pax, 16K vuelos, 86% ocupacion. Mejor aeropuerto Sudamerica (Skytrax x8)" },
+  pasajerosAereos: { valor: "57.52M pax aereos 2025 (record)", detalle: "32.9M nacionales + 24.7M internacionales. +1.67% vs 2024. 2026: ya 10M+ pax" },
   flotaElectricaBogota: { valor: "1,850 buses EV (meta 2026)", detalle: "Fase VI: 269 buses troncales EV. Flota EV 3ra mas grande del mundo. 711 nuevos EV llegan 2026" },
   transcaribeCrisis: { valor: "Deficit $76,000M (2026)", detalle: "Tarifa tecnica: $6,950/pax vs usuario: $3,500. Distrito inyecto $47,000M en 2025. 55 buses nuevos mayo 2026" },
+  empleoSector: { valor: "1.58M empleados construccion (ene 2026)", detalle: "6.8% de poblacion ocupada. Cada $1B invertido genera 28,000 empleos" },
+  competitividad: { valor: "Puesto 58 de 64 (IMD 2024)", detalle: "Pilar infraestructura: posicion 56. Muy por debajo de Chile (44), Mexico (55)" },
+  redTerciaria: { valor: "142,284 km", detalle: "69% de red total (206,708 km). 94-96% en mal estado. Solo 6% pavimentado. Meta: 33,000 km en cuatrienio" },
+  ied: { valor: "USD 685M en transporte (2025)", detalle: "Caida 61% desde 2022 ($1,764M). IED total: USD 11,469M (-16.1%)" },
+  ejecucionPresupuestal: { valor: "Solo 7% ejecutado (abr 2025)", detalle: "$4B aplazados. Invias adeuda $1B+ a constructoras. Peor ejecucion historica sector transporte" },
+};
+
+export const proyectosAdicionales = {
+  mulaloLoboguerrero: { estado: "En arbitraje", inversion: "$1.794B en patrimonio", detalle: "31.8 km, 5 tuneles, 48 puentes. Covimar solicito terminacion. +10 anos en controversias" },
+  segundoTunelLinea: { estado: "En evaluacion ANI", longitud: "11 km (seria mas largo de America)", detalle: "Prefactibilidad aprobada. Factibilidad completada. Construccion estimada: 72 meses. 90% estructura privada" },
+  varianteSanFranciscoMocoa: { avance: "30%", detalle: "27 km, 63 puentes, 3 tuneles. 100% pavimentacion frente S.Francisco. 4 puentes en servicio. 848 empleos. Inversion $1.2B + $2.5B adicionales. Meta: 2030" },
+  puentePumarejo: { estado: "Antiguo puente sin demoler", detalle: "Desmonte por fases desde 2026 ($146,000M, 5 anos). Bloquea navegacion rio Magdalena. Desacato abierto contra Invias" },
 };
 
 export const reformaInstitucional = [
@@ -252,6 +264,10 @@ export const riesgos = [
   { riesgo: "Falta transversales", impacto: "Estructural", valor: "6+ corredores", detalle: "Territorios sin acceso vial entre troncales N-S" },
   { riesgo: "Cable Potosi suspendido", impacto: "Alto", valor: "$529,000M con 0% obra", detalle: "Contrato adjudicado 2023, meta 2027, pero construccion no ha iniciado. 600K habitantes afectados" },
   { riesgo: "Transcaribe deficit creciente", impacto: "Critico", valor: "$76,000M deficit 2026", detalle: "Tarifa tecnica $6,950 vs usuario $3,500. Riesgo de colapso operacional" },
+  { riesgo: "Ejecucion presupuestal historicamente baja", impacto: "Critico", valor: "Solo 7% ejecutado (abr 2025)", detalle: "$4B aplazados. Invias adeuda $1B+ a constructoras. CCI alerta peor ejecucion historica" },
+  { riesgo: "Mulalo-Loboguerrero en arbitraje", impacto: "Alto", valor: "+10 anos sin avance", detalle: "Covimar pidio terminacion contrato. $1.794B bloqueados en patrimonio autonomo" },
+  { riesgo: "Puente Pumarejo antiguo sin demoler", impacto: "Medio", valor: "$146,000M desmonte", detalle: "Bloquea navegacion Magdalena. Desacato abierto contra Invias" },
+  { riesgo: "IED en transporte desplomada", impacto: "Alto", valor: "USD 685M (-61% vs 2022)", detalle: "De USD 1,764M en 2022 a USD 685M en 2025. Senal de baja confianza inversora" },
 ];
 
 export const concesionesIngresos = [
