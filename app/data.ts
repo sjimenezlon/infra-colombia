@@ -239,6 +239,7 @@ export const riesgos = [
   { riesgo: "5G incipiente", impacto: "Medio", valor: "17-20% avance", detalle: "2 de 6 proyectos en pre-construccion. CCI alerta rezago." },
   { riesgo: "Tren Cercanias Cali pausado", impacto: "Alto", valor: "$13B sin cofinanciacion", detalle: "Gobierno no firmo antes de Ley de Garantias (nov 2025)" },
   { riesgo: "Brecha aeroportuaria", impacto: "Alto", valor: "JMC al 132% capacidad", detalle: "El Dorado necesita EDMAX para sostener crecimiento" },
+  { riesgo: "Tunel del Toyo: equipos electromecanicos", impacto: "Alto", valor: "T1 obra civil 99% pero sin equipos", detalle: "Gobierno Petro no ha entregado componente. Antioquia asumio 100% del proyecto" },
   { riesgo: "Falta transversales", impacto: "Estructural", valor: "6+ corredores", detalle: "Territorios sin acceso vial entre troncales N-S" },
 ];
 
