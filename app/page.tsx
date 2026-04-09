@@ -7,7 +7,12 @@ import {
   proyectosLargoPlazo, sectorFerreo, reformaInstitucional,
   programasEspeciales, riesgos, viasParaLaPaz, pmtiDistribution,
 } from "./data";
-import { PMTIChart, ConcesionesChart, Avance4GChart } from "./components/Charts";
+import {
+  PMTIChart, ConcesionesChart, Avance4GChart, PresupuestoTimelineChart,
+  MetroProgressChart, CiudadesPresupuestoChart, RadarModoChart,
+  Avance5GBarChart, AeropuertosPaxChart, InversionHistoricaChart,
+  ElectrificacionChart,
+} from "./components/Charts";
 
 const tabs = [
   { id: "resumen", label: "Resumen Ejecutivo" },
@@ -101,23 +106,23 @@ function ResumenSection() {
         </Card>
       </div>
 
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card>
+          <h3 className="text-lg font-semibold text-white mb-2">Presupuesto Transporte: Evolucion</h3>
+          <p className="text-xs text-muted mb-3">Billones COP - Presupuesto General de la Nacion</p>
+          <PresupuestoTimelineChart />
+        </Card>
+        <Card>
+          <h3 className="text-lg font-semibold text-white mb-2">Radar Sectorial: Inversion vs Ejecucion vs Cobertura</h3>
+          <p className="text-xs text-muted mb-3">Indice relativo por modo de transporte (0-100)</p>
+          <RadarModoChart />
+        </Card>
+      </div>
+
       <Card>
-        <h3 className="text-lg font-semibold text-white mb-3">Presupuesto Sector Transporte 2026</h3>
-        <div className="flex items-end gap-4">
-          <div>
-            <p className="text-4xl font-bold text-blue-400">$20.52B</p>
-            <p className="text-sm text-muted">COP (Presupuesto General de la Nacion)</p>
-          </div>
-          <div className="flex-1">
-            <div className="flex justify-between text-xs text-muted mb-1">
-              <span>2025: ~$17.4B</span>
-              <span>2026: $20.52B (+18%)</span>
-            </div>
-            <div className="w-full bg-gray-800 rounded-full h-4 overflow-hidden">
-              <div className="h-full rounded-full bg-gradient-to-r from-blue-600 to-emerald-500 animate-gradient" style={{ width: "100%" }} />
-            </div>
-          </div>
-        </div>
+        <h3 className="text-lg font-semibold text-white mb-2">Inversion Historica en Infraestructura</h3>
+        <p className="text-xs text-muted mb-3">CAPEX acumulado por cuatrienio vs. PMTI total (COP Billones)</p>
+        <InversionHistoricaChart />
       </Card>
 
       <div className="grid md:grid-cols-4 gap-4">
@@ -167,6 +172,10 @@ function VialSection() {
       <SectionTitle sub="6 proyectos | 1,012 km | ~US$2,000M invertidos | 14% avance promedio">
         Programa 5G - Concesiones del Bicentenario
       </SectionTitle>
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-3">Avance Comparativo 5G</h3>
+        <Avance5GBarChart />
+      </Card>
       <div className="grid md:grid-cols-3 gap-4">
         {proyectos5G.map((p, i) => (
           <Card key={i}>
@@ -275,6 +284,12 @@ function AereoSection() {
       <SectionTitle sub="590 aeropuertos | Plan $570,805M (2024-2026) | USD $300M CAF | 5 concesiones / 15 aeropuertos">
         Infraestructura Aeroportuaria
       </SectionTitle>
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-3">Pasajeros 2025 vs. Capacidad de Diseno (Millones)</h3>
+        <AeropuertosPaxChart />
+        <p className="text-xs text-muted mt-2 text-center">Rojo = sobre capacidad | Los aeropuertos que exceden su capacidad de diseno requieren expansion urgente</p>
+      </Card>
+
       <div className="grid md:grid-cols-3 gap-4">
         {aeropuertos.map((a, i) => (
           <Card key={i}>
@@ -387,6 +402,10 @@ function CiudadesSection() {
   return (
     <div className="space-y-6">
       <SectionTitle sub="Bogota, Medellin, Cali, Barranquilla, Cartagena">Grandes Ciudades</SectionTitle>
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-3">Presupuesto Distrital 2026 (COP Billones)</h3>
+        <CiudadesPresupuestoChart />
+      </Card>
       <div className="flex flex-wrap gap-2">
         {ciudades.map((c, i) => (
           <button key={i} onClick={() => setSelected(i)} className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${selected === i ? "bg-blue-600 text-white" : "bg-gray-800 text-gray-400 hover:bg-gray-700 hover:text-white"}`}>
@@ -423,6 +442,18 @@ function MasivoSection() {
   return (
     <div className="space-y-8">
       <SectionTitle sub="Metros, BRTs, trenes, cables">Transporte Masivo</SectionTitle>
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card>
+          <h3 className="text-sm font-semibold text-white mb-3">Avance Grandes Proyectos Metro/Tren</h3>
+          <p className="text-xs text-muted mb-2">Evolucion porcentual de avance</p>
+          <MetroProgressChart />
+        </Card>
+        <Card>
+          <h3 className="text-sm font-semibold text-white mb-3">Electrificacion de Flotas BRT</h3>
+          <p className="text-xs text-muted mb-2">% de flota electrica proyectada por ciudad</p>
+          <ElectrificacionChart />
+        </Card>
+      </div>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead><tr className="border-b border-card-border">
@@ -564,8 +595,8 @@ function RiesgosSection() {
             { indicador: "Metro Bogota L1", meta: "90% avance", fecha: "Dic 2026", actual: "75.5%" },
             { indicador: "Metro Bogota L1 Operacion", meta: "Comercial", fecha: "Mar 2028", actual: "En obra" },
             { indicador: "Tunel del Toyo", meta: "Operacion", fecha: "Dic 2026", actual: "T1:99% T2:70%" },
-            { indicador: "Metro Ligero 80", meta: "Apertura", fecha: "2028", actual: "42%" },
-            { indicador: "Regiotram Fase 1", meta: "Operacion", fecha: "Oct 2027", actual: "32%" },
+            { indicador: "Metro Ligero 80", meta: "Apertura", fecha: "2028", actual: "50%+" },
+            { indicador: "Regiotram Fase 1", meta: "Operacion", fecha: "Oct 2027", actual: "37%" },
             { indicador: "Aeropuerto Cartagena", meta: "Viabilidad", fecha: "H1 2026", actual: "Factibilidad" },
             { indicador: "EDMAX El Dorado", meta: "Inicio obra", fecha: "Dic 2028", actual: "Audiencia" },
             { indicador: "4G completo", meta: "100% operacion", fecha: "2026-2027", actual: "92.38%" },

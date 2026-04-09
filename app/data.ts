@@ -7,7 +7,7 @@
 export const kpis = [
   { label: "Presupuesto Transporte 2026", value: "$20.52B", unit: "COP", delta: "+18% vs 2025" },
   { label: "PMTI (30 anos)", value: "$240B", unit: "COP", delta: "2021-2051" },
-  { label: "Avance 4G Promedio", value: "92.4%", unit: "", delta: "30 proyectos" },
+  { label: "Avance 4G Promedio", value: "92.4%", unit: "", delta: "30 proy. | 5,052 km" },
   { label: "Inversion Invias 2026", value: "$9.8B", unit: "COP", delta: "14 departamentos" },
   { label: "Metro Bogota L1", value: "75.5%", unit: "", delta: "Operacion mar 2028" },
   { label: "Vias para la Paz", value: "$15.05B", unit: "COP", delta: "20 corredores" },
@@ -33,12 +33,12 @@ export const proyectos4G = [
 ];
 
 export const proyectos5G = [
-  { nombre: "Accesos Cali-Palmira", avance: 42.66, detalle: "Av. Bicentenario al 74%" },
-  { nombre: "Buenaventura-Loboguerrero-Buga", avance: 12.26, detalle: "En ejecucion" },
-  { nombre: "Troncal Magdalena 1", avance: 8, detalle: "Puerto Salgar-B/bermeja" },
-  { nombre: "Troncal Magdalena 2", avance: 5, detalle: "Sabana Torres-Curumani" },
-  { nombre: "ALO Sur", avance: 2, detalle: "Pre-construccion" },
-  { nombre: "Accesos Norte Fase II", avance: 1, detalle: "Pre-construccion" },
+  { nombre: "Accesos Cali-Palmira", avance: 42.66, detalle: "Av. Bicentenario al 74%. Malla Vial del Valle" },
+  { nombre: "Buenaventura-Loboguerrero-Buga", avance: 12.26, detalle: "En ejecucion activa" },
+  { nombre: "Troncal Magdalena 1", avance: 10, detalle: "Puerto Salgar-B/bermeja. En construccion" },
+  { nombre: "Troncal Magdalena 2", avance: 7, detalle: "Sabana Torres-Curumani. En construccion" },
+  { nombre: "ALO Sur", avance: 3, detalle: "Pre-construccion. Inicio obra ago 2026" },
+  { nombre: "Accesos Norte Fase II", avance: 2, detalle: "Pre-construccion. Pendiente licencias" },
 ];
 
 export const aeropuertos = [
@@ -53,9 +53,9 @@ export const aeropuertos = [
 export const transporteMasivo = [
   { sistema: "Metro Bogota L1", tipo: "Metro elevado", km: 23.96, avance: 75.5, presupuesto: "$23.69B", meta: "Mar 2028", paxDia: "N/A (nuevo)" },
   { sistema: "Metro Bogota L2", tipo: "Metro subterraneo", km: 15.5, avance: 0, presupuesto: "TBD", meta: "2035", paxDia: "49K/hr cap." },
-  { sistema: "Regiotram Occidente", tipo: "Tren cercanias", km: 40, avance: 32, presupuesto: "TBD", meta: "Oct 2027", paxDia: "130K proy." },
-  { sistema: "Metro Ligero 80 (MDE)", tipo: "Metro ligero", km: 13.25, avance: 42, presupuesto: "$3.54B", meta: "2028", paxDia: "170K proy." },
-  { sistema: "Tren Cercanias Cali", tipo: "Tren electrico", km: 23, avance: 0, presupuesto: "$12B", meta: "TBD", paxDia: "14K empleos" },
+  { sistema: "Regiotram Occidente", tipo: "Tren cercanias", km: 40, avance: 37, presupuesto: "TBD", meta: "Oct 2027", paxDia: "130K proy." },
+  { sistema: "Metro Ligero 80 (MDE)", tipo: "Metro ligero", km: 13.25, avance: 50, presupuesto: "$3.54B", meta: "2028", paxDia: "170K proy." },
+  { sistema: "Tren Cercanias Cali", tipo: "Tren electrico", km: 23, avance: 0, presupuesto: "$13B", meta: "Pausado", paxDia: "14K empleos" },
   { sistema: "Tunel del Toyo (MDE)", tipo: "Tunel vial", km: 9.8, avance: 85, presupuesto: "$5+B", meta: "Dic 2026", paxDia: "N/A" },
 ];
 
@@ -67,7 +67,7 @@ export const ciudades = [
     proyectos: [
       { nombre: "Metro Linea 1", monto: "$23.69B", avance: "75.5%", entrega: "Mar 2028" },
       { nombre: "Troncal Av. 68", monto: "$2.93B", avance: "62-70%", entrega: "2026 parcial" },
-      { nombre: "TransMiCable San Cristobal", monto: "$364,000M", avance: "80%+", entrega: "Dic 2026" },
+      { nombre: "TransMiCable San Cristobal", monto: "$364,000M", avance: "85.57%", entrega: "Dic 2026" },
       { nombre: "ALO Sur + Centro", monto: "APP", avance: "Estructuracion", entrega: "2026+" },
       { nombre: "Cable Potosi", monto: "Parte $2.1B cables", avance: "En obra", entrega: "Mar 2027" },
     ],
@@ -77,7 +77,7 @@ export const ciudades = [
     presupuesto2026: "$6.3B (a 2028)",
     sectorMovilidad: "180K empleos",
     proyectos: [
-      { nombre: "Metro Ligero de la 80", monto: "$3.54B", avance: "42%", entrega: "2028" },
+      { nombre: "Metro Ligero de la 80", monto: "$3.54B", avance: "50%+", entrega: "2028" },
       { nombre: "Tunel del Toyo", monto: "$5+B", avance: "T1:99% T2:70%", entrega: "Dic 2026" },
       { nombre: "Primavera Norte", monto: "$216,000M", avance: "3%", entrega: "Abr 2027" },
       { nombre: "Mi Rio Mis Quebradas", monto: "$663,000M", avance: "En ejecucion", entrega: "Progresivo" },
@@ -89,7 +89,7 @@ export const ciudades = [
     presupuesto2026: "$7.5B",
     sectorMovilidad: "$373,183M (+356%)",
     proyectos: [
-      { nombre: "Tren de Cercanias", monto: "$12B", avance: "Estructuracion", entrega: "TBD" },
+      { nombre: "Tren de Cercanias", monto: "$13B", avance: "Pausado (sin cofin. Nacion)", entrega: "TBD" },
       { nombre: "Renovacion MIO", monto: "$1.37B", avance: "47 buses entregados", entrega: "100% EV 2035" },
       { nombre: "Malla Vial", monto: "$900,000M", avance: "100+ segmentos", entrega: "Progresivo" },
       { nombre: "26 Proyectos Transformacion", monto: "$965,000M", avance: "En adjudicacion", entrega: "2026" },
@@ -236,7 +236,8 @@ export const riesgos = [
   { riesgo: "Crisis financiera BRTs", impacto: "Alto", valor: "3 sistemas en crisis", detalle: "Transcaribe ($63,000M deficit), MIO, Metrolinea" },
   { riesgo: "Cordillera Oriental en levantamiento", impacto: "Estructural", valor: "3 vias principales", detalle: "Solo 2 cordilleras con levantamiento permanente: Himalaya y C. Oriental" },
   { riesgo: "Tramo Villeta-Guaduas", impacto: "Critico", valor: "13 anos sin solucion", detalle: "Fallas geologicas activas cruzan el proyecto" },
-  { riesgo: "5G incipiente", impacto: "Medio", valor: "14% avance promedio", detalle: "2 de 6 proyectos en pre-construccion" },
+  { riesgo: "5G incipiente", impacto: "Medio", valor: "17-20% avance", detalle: "2 de 6 proyectos en pre-construccion. CCI alerta rezago." },
+  { riesgo: "Tren Cercanias Cali pausado", impacto: "Alto", valor: "$13B sin cofinanciacion", detalle: "Gobierno no firmo antes de Ley de Garantias (nov 2025)" },
   { riesgo: "Brecha aeroportuaria", impacto: "Alto", valor: "JMC al 132% capacidad", detalle: "El Dorado necesita EDMAX para sostener crecimiento" },
   { riesgo: "Falta transversales", impacto: "Estructural", valor: "6+ corredores", detalle: "Territorios sin acceso vial entre troncales N-S" },
 ];
