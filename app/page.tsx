@@ -13,6 +13,9 @@ import {
   Avance5GBarChart, AeropuertosPaxChart, InversionHistoricaChart,
   ElectrificacionChart,
 } from "./components/Charts";
+import {
+  GaugeRow, Timeline, StatCard, CorridorMap, ComparisonBars, HeatmapGrid,
+} from "./components/Visuals";
 
 const tabs = [
   { id: "resumen", label: "Resumen Ejecutivo" },
@@ -82,6 +85,27 @@ function ResumenSection() {
         ))}
       </div>
 
+      {/* Gauges de mega-proyectos */}
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-2 text-center">Avance Mega-Proyectos (Corte Marzo 2026)</h3>
+        <GaugeRow items={[
+          { value: 75.5, label: "Metro Bogota L1", color: "#3b82f6" },
+          { value: 50, label: "Metro 80 Medellin", color: "#10b981" },
+          { value: 92, label: "Programa 4G", color: "#10b981" },
+          { value: 86, label: "TransMiCable S.C.", color: "#8b5cf6" },
+          { value: 37, label: "Regiotram", color: "#f59e0b" },
+          { value: 18, label: "Programa 5G", color: "#ef4444" },
+        ]} />
+      </Card>
+
+      {/* Stats con sparklines */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <StatCard title="Red Vial Nacional" value="10,192" unit="km" spark={[8500, 8800, 9200, 9600, 10192]} sparkColor="#3b82f6" trend="79.8% pavimentada" />
+        <StatCard title="Puertos Concesionados" value="63" unit="puertos" spark={[45, 48, 52, 58, 63]} sparkColor="#10b981" trend="8 zonas portuarias" />
+        <StatCard title="Aeropuertos" value="590" unit="total" spark={[560, 570, 575, 585, 590]} sparkColor="#f59e0b" trend="15 concesionados" />
+        <StatCard title="Concesiones ANI" value="100+" unit="contratos" spark={[60, 70, 80, 90, 100]} sparkColor="#8b5cf6" trend="Viales+aéreos+férreos+port." />
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
           <h3 className="text-lg font-semibold text-white mb-2">PMTI 2021-2051: $240 Billones COP</h3>
@@ -145,6 +169,12 @@ function ResumenSection() {
 function VialSection() {
   return (
     <div className="space-y-8">
+      {/* Mapa de corredores */}
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-3 text-center">Mapa Esquematico de Corredores Viales</h3>
+        <CorridorMap />
+      </Card>
+
       <SectionTitle sub="30 proyectos | 5,052 km | 19 departamentos | CAPEX $65.6B | 92.38% avance promedio">
         Programa 4G - Concesiones Viales
       </SectionTitle>
@@ -478,6 +508,33 @@ function MasivoSection() {
           </tbody>
         </table>
       </div>
+      {/* Timeline Metro Bogota + Comparison bars aeropuertos */}
+      <div className="grid md:grid-cols-2 gap-6">
+        <Card>
+          <h3 className="text-sm font-semibold text-white mb-4">Timeline: Metro de Bogota L1</h3>
+          <Timeline events={[
+            { date: "Oct 2019", title: "Adjudicacion contrato", detail: "Consorcio APCA Transmimetro (China Harbour + Xi'an Metro)", status: "done" },
+            { date: "2021-2023", title: "Obras iniciales y cimentacion", detail: "Patio taller, pilotes, columnas del viaducto", status: "done" },
+            { date: "2024", title: "Avance acelerado viaducto", detail: "De 35% a 60%. Primeras dovelas instaladas", status: "done" },
+            { date: "Mar 2026", title: "75.50% - 12 km de viaducto", detail: "9 trenes entregados. 130+ cabinas del TransMiCable", status: "active" },
+            { date: "Jun 2026", title: "Pruebas de rodadura", detail: "Primeros 5.76 km. Test del material rodante", status: "pending" },
+            { date: "Dic 2026", title: "Meta 90% avance", detail: "Finalizacion estructural del viaducto completo", status: "pending" },
+            { date: "Mar 2028", title: "Operacion comercial", detail: "16 estaciones, 23.96 km elevados", status: "pending" },
+          ]} />
+        </Card>
+        <Card>
+          <h3 className="text-sm font-semibold text-white mb-4">Aeropuertos: Demanda vs Capacidad</h3>
+          <ComparisonBars items={[
+            { label: "El Dorado (BOG)", valueA: 45, valueB: 35, labelA: "Pax 2025", labelB: "Capacidad", max: 50 },
+            { label: "JMC (MDE)", valueA: 14.5, valueB: 11, labelA: "Pax 2025", labelB: "Capacidad", max: 20 },
+            { label: "Bonilla (CLO)", valueA: 6.2, valueB: 8, labelA: "Pax 2025", labelB: "Capacidad", max: 10 },
+            { label: "Cortissoz (BAQ)", valueA: 4.1, valueB: 5, labelA: "Pax 2025", labelB: "Capacidad", max: 10 },
+            { label: "R. Nunez (CTG)", valueA: 5.8, valueB: 6, labelA: "Pax 2025", labelB: "Capacidad", max: 10 },
+          ]} />
+          <p className="text-xs text-red-400 mt-3">El Dorado y JMC operan por encima de su capacidad de diseno. Requieren expansion urgente.</p>
+        </Card>
+      </div>
+
       <div className="grid md:grid-cols-2 gap-6">
         <Card>
           <h3 className="text-sm font-semibold text-white mb-3">BRTs en Crisis</h3>
@@ -613,6 +670,20 @@ function RiesgosSection() {
           ))}
         </div>
       </Card>
+      {/* Heatmap: ejecucion por sector y region */}
+      <Card>
+        <h3 className="text-sm font-semibold text-white mb-3">Mapa de Calor: Ejecucion por Modo y Region</h3>
+        <p className="text-xs text-muted mb-3">Nivel relativo de avance (indice 0-100)</p>
+        <HeatmapGrid data={[
+          { label: "Carretero 4G", values: [{ name: "Antioquia", value: 95 }, { name: "Santander", value: 90 }, { name: "Valle", value: 85 }, { name: "Cundinamarca", value: 70 }, { name: "Cauca", value: 43 }, { name: "Orinoquia", value: 60 }] },
+          { label: "Carretero 5G", values: [{ name: "Antioquia", value: 10 }, { name: "Santander", value: 8 }, { name: "Valle", value: 43 }, { name: "Cundinamarca", value: 3 }, { name: "Cauca", value: 0 }, { name: "Orinoquia", value: 0 }] },
+          { label: "Ferreo", values: [{ name: "Antioquia", value: 20 }, { name: "Santander", value: 30 }, { name: "Valle", value: 10 }, { name: "Cundinamarca", value: 32 }, { name: "Cauca", value: 0 }, { name: "Orinoquia", value: 5 }] },
+          { label: "Aereo", values: [{ name: "Antioquia", value: 60 }, { name: "Santander", value: 20 }, { name: "Valle", value: 25 }, { name: "Cundinamarca", value: 90 }, { name: "Cauca", value: 5 }, { name: "Orinoquia", value: 15 }] },
+          { label: "Masivo urbano", values: [{ name: "Antioquia", value: 70 }, { name: "Santander", value: 15 }, { name: "Valle", value: 30 }, { name: "Cundinamarca", value: 85 }, { name: "Cauca", value: 0 }, { name: "Orinoquia", value: 0 }] },
+          { label: "Fluvial/Puerto", values: [{ name: "Antioquia", value: 10 }, { name: "Santander", value: 25 }, { name: "Valle", value: 40 }, { name: "Cundinamarca", value: 5 }, { name: "Cauca", value: 5 }, { name: "Orinoquia", value: 20 }] },
+        ]} />
+      </Card>
+
       <Card className="border-emerald-500/30">
         <h3 className="text-lg font-semibold text-emerald-400 mb-3">Fortalezas</h3>
         <div className="grid md:grid-cols-2 gap-3">
