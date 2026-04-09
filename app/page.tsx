@@ -6,6 +6,7 @@ import {
   ciudades, cuellosDeBottella, tramosEstructurar, transversalesFaltantes,
   proyectosLargoPlazo, sectorFerreo, reformaInstitucional,
   programasEspeciales, riesgos, viasParaLaPaz, pmtiDistribution,
+  datosContextuales,
 } from "./data";
 import {
   PMTIChart, ConcesionesChart, Avance4GChart, PresupuestoTimelineChart,
@@ -161,6 +162,55 @@ function ResumenSection() {
             <p className="text-xs text-gray-400 mt-1">{item.desc}</p>
           </Card>
         ))}
+      </div>
+
+      {/* Datos contextuales verificados */}
+      <SectionTitle sub="Datos de contexto verificados con fuentes oficiales">Indicadores del Sector</SectionTitle>
+      <div className="grid md:grid-cols-3 gap-4">
+        <Card className="border-amber-500/30">
+          <p className="text-xs text-muted uppercase">Costos Logisticos</p>
+          <p className="text-2xl font-bold text-amber-400">{datosContextuales.costosLogisticos.valor}%</p>
+          <p className="text-xs text-gray-400">{datosContextuales.costosLogisticos.unidad}</p>
+          <p className="text-xs text-red-400 mt-1">{datosContextuales.costosLogisticos.referencia}</p>
+          <p className="text-[10px] text-gray-500 mt-1">{datosContextuales.costosLogisticos.fuente}</p>
+        </Card>
+        <Card className="border-blue-500/30">
+          <p className="text-xs text-muted uppercase">Carga Portuaria</p>
+          <p className="text-2xl font-bold text-blue-400">170.8M</p>
+          <p className="text-xs text-gray-400">ton/ano estimadas 2025</p>
+          <p className="text-xs text-gray-300 mt-1">{datosContextuales.cargaPortuaria.detalle}</p>
+          <p className="text-xs text-emerald-400 mt-1">Lider: {datosContextuales.cargaPortuaria.lider}</p>
+        </Card>
+        <Card className="border-red-500/30">
+          <p className="text-xs text-muted uppercase">Siniestros Viales</p>
+          <p className="text-2xl font-bold text-red-400">2,529</p>
+          <p className="text-xs text-gray-400">muertos ene-abr 2025</p>
+          <p className="text-xs text-emerald-400 mt-1">-5.14% vs 2024 (137 vidas salvadas)</p>
+          <p className="text-xs text-gray-500 mt-1">Motociclistas: 62% de victimas</p>
+        </Card>
+      </div>
+      <div className="grid md:grid-cols-3 gap-4">
+        <Card>
+          <p className="text-xs text-muted uppercase">Pasajeros Aereos El Dorado</p>
+          <p className="text-2xl font-bold text-blue-400">45.48M</p>
+          <p className="text-xs text-gray-400">pasajeros 2025 (record)</p>
+          <p className="text-xs text-gray-300 mt-1">Ene 2026: 2M+ pax, 16K vuelos, 86% ocupacion</p>
+          <p className="text-xs text-emerald-400 mt-1">Mejor aeropuerto Sudamerica (Skytrax x8)</p>
+        </Card>
+        <Card>
+          <p className="text-xs text-muted uppercase">Flota Electrica Bogota</p>
+          <p className="text-2xl font-bold text-emerald-400">1,850</p>
+          <p className="text-xs text-gray-400">buses EV meta 2026</p>
+          <p className="text-xs text-gray-300 mt-1">711 nuevos EV llegan en 2026. Fase VI: 269 troncales</p>
+          <p className="text-xs text-blue-400 mt-1">3ra flota EV mas grande del mundo</p>
+        </Card>
+        <Card className="border-red-500/30">
+          <p className="text-xs text-muted uppercase">Crisis Transcaribe</p>
+          <p className="text-2xl font-bold text-red-400">$76,000M</p>
+          <p className="text-xs text-gray-400">deficit proyectado 2026</p>
+          <p className="text-xs text-gray-300 mt-1">Tarifa tecnica $6,950 vs usuario $3,500</p>
+          <p className="text-xs text-amber-400 mt-1">55 buses nuevos mayo 2026</p>
+        </Card>
       </div>
     </div>
   );

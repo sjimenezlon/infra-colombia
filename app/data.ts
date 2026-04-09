@@ -66,10 +66,10 @@ export const ciudades = [
     sectorMovilidad: "$9.2B",
     proyectos: [
       { nombre: "Metro Linea 1", monto: "$23.69B", avance: "75.5%", entrega: "Mar 2028" },
-      { nombre: "Troncal Av. 68", monto: "$2.93B", avance: "62-70%", entrega: "2026 parcial" },
+      { nombre: "Troncal Av. 68", monto: "$2.93B", avance: "77%+ (G9: 80%)", entrega: "G3-4: jun 26, resto 26-27" },
       { nombre: "TransMiCable San Cristobal", monto: "$364,000M", avance: "85.57%", entrega: "Dic 2026" },
-      { nombre: "ALO Sur + Centro", monto: "APP", avance: "Estructuracion", entrega: "2026+" },
-      { nombre: "Cable Potosi", monto: "Parte $2.1B cables", avance: "En obra", entrega: "Mar 2027" },
+      { nombre: "ALO Sur (24.5 km)", monto: "$1+B APP", avance: "Acuerdo ANI abr 8", entrega: "Inicio ago 2026" },
+      { nombre: "Cable Potosi", monto: "$529,000M", avance: "0% obra (suspendido)", entrega: "Incierto" },
     ],
   },
   {
@@ -101,7 +101,7 @@ export const ciudades = [
     sectorMovilidad: "+15% vs 2025",
     proyectos: [
       { nombre: "Doble Calzada B/quilla-Cienaga", monto: "$2.7B", avance: "Inicio 2026", entrega: "Multi-anual" },
-      { nombre: "Gran Via Puerto Colombia", monto: "N/D", avance: "Avanzado", entrega: "Jul 2026" },
+      { nombre: "Gran Via Puerto Colombia", monto: "N/D", avance: "83%", entrega: "Jul 2026" },
       { nombre: "Dobles Calzadas Juan Mina+Caracoli", monto: "$228,000M", avance: "17-20%", entrega: "En obra" },
       { nombre: "Tren Tajamar", monto: "TBD", avance: "Planeacion", entrega: "TBD" },
       { nombre: "Barrios a la Obra", monto: "$326,000M", avance: "90 barrios", entrega: "Progresivo" },
@@ -112,7 +112,7 @@ export const ciudades = [
     presupuesto2026: "$4.55B",
     sectorMovilidad: "78% inv. publica",
     proyectos: [
-      { nombre: "Canal del Dique", monto: "$5.6B", avance: "Pre-construccion", entrega: "Post-2026 EIA" },
+      { nombre: "Canal del Dique", monto: "$5.6B", avance: "EIA al 40%, entrega oct", entrega: "Licencia antes ago 2026" },
       { nombre: "Renovacion Bocagrande", monto: "$168,157M", avance: "Inicio 2026", entrega: "2026" },
       { nombre: "Intercambiador Ternera", monto: "$41,733M", avance: "En obra", entrega: "2026" },
       { nombre: "Proteccion Costera", monto: "N/D", avance: "90%+", entrega: "2026" },
@@ -206,6 +206,15 @@ export const sectorFerreo = [
   { corredor: "Tren Cercanias Cali-Jamundi", estado: "Estructuracion", inversion: "$12B", entidad: "Cali" },
 ];
 
+export const datosContextuales = {
+  costosLogisticos: { valor: 15.6, unidad: "% de facturacion", referencia: "OCDE: 8%, Mundial: 11-13%", fuente: "Encuesta Nacional Logistica 2024" },
+  cargaPortuaria: { valor: "170.8M ton/ano (est. 2025)", detalle: "H1 2025: 85.4M ton (-6.1% vs 2024). Caribe: 84.7%, Pacifico: 13.7%", lider: "Cartagena: 25.1M ton" },
+  siniestrosViales: { valor: "2,529 muertos (ene-abr 2025)", detalle: "-5.14% vs 2024. 137 vidas salvadas. Motociclistas: 62% de victimas" },
+  pasajerosAereos: { valor: "45.48M (El Dorado 2025)", detalle: "Ene 2026: 2M+ pax, 16K vuelos, 86% ocupacion. Mejor aeropuerto Sudamerica (Skytrax x8)" },
+  flotaElectricaBogota: { valor: "1,850 buses EV (meta 2026)", detalle: "Fase VI: 269 buses troncales EV. Flota EV 3ra mas grande del mundo. 711 nuevos EV llegan 2026" },
+  transcaribeCrisis: { valor: "Deficit $76,000M (2026)", detalle: "Tarifa tecnica: $6,950/pax vs usuario: $3,500. Distrito inyecto $47,000M en 2025. 55 buses nuevos mayo 2026" },
+};
+
 export const reformaInstitucional = [
   "Conformar comite de expertos en transporte para plan estrategico del proximo MinTransporte",
   "Fusionar entidades del sector y reducir planta significativamente",
@@ -241,6 +250,8 @@ export const riesgos = [
   { riesgo: "Brecha aeroportuaria", impacto: "Alto", valor: "JMC al 132% capacidad", detalle: "El Dorado necesita EDMAX para sostener crecimiento" },
   { riesgo: "Tunel del Toyo: equipos electromecanicos", impacto: "Alto", valor: "T1 obra civil 99% pero sin equipos", detalle: "Gobierno Petro no ha entregado componente. Antioquia asumio 100% del proyecto" },
   { riesgo: "Falta transversales", impacto: "Estructural", valor: "6+ corredores", detalle: "Territorios sin acceso vial entre troncales N-S" },
+  { riesgo: "Cable Potosi suspendido", impacto: "Alto", valor: "$529,000M con 0% obra", detalle: "Contrato adjudicado 2023, meta 2027, pero construccion no ha iniciado. 600K habitantes afectados" },
+  { riesgo: "Transcaribe deficit creciente", impacto: "Critico", valor: "$76,000M deficit 2026", detalle: "Tarifa tecnica $6,950 vs usuario $3,500. Riesgo de colapso operacional" },
 ];
 
 export const concesionesIngresos = [
